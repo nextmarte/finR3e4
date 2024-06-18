@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.472">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ariel Levy">
+
+<title>Caderno_ Finanças 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="finr34_files/libs/clipboard/clipboard.min.js"></script>
+<script src="finr34_files/libs/quarto-html/quarto.js"></script>
+<script src="finr34_files/libs/quarto-html/popper.min.js"></script>
+<script src="finr34_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="finr34_files/libs/quarto-html/anchor.min.js"></script>
+<link href="finr34_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="finr34_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="finr34_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="finr34_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="finr34_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="finr34_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="finr34_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="finr34_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="finr34_files/libs/proj4js-2.3.15/proj4.js"></script>
+<link href="finr34_files/libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
+<script src="finr34_files/libs/highcharts-9.3.1/highcharts.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/highcharts-3d.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/highcharts-more.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/stock.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/map.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/data.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/exporting.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/offline-exporting.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/drilldown.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/item-series.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/annotations.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/export-data.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/funnel.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/heatmap.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/treemap.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/sankey.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/organization.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/solid-gauge.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/streamgraph.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/sunburst.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/vector.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/wordcloud.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/xrange.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/tilemap.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/venn.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/gantt.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/timeline.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/bullet.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/coloraxis.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/dumbbell.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/lollipop.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/series-label.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/plugins/motion.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/custom/reset.js"></script>
+<script src="finr34_files/libs/highcharts-9.3.1/modules/boost.js"></script>
+<script src="finr34_files/libs/highchart-binding-0.9.4/highchart.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Caderno_ Finanças 1</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ariel Levy </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="inicialização" class="level3">
+<h3 class="anchored" data-anchor-id="inicialização">Inicialização</h3>
+<p>Iniciamos em um arquivo R Markdown e carregamos os pacotes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(lubridate))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(readxl))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(highcharter))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyquant))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tibbletime))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(quantmod))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(PerformanceAnalytics))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(scales))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(timetk))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="bibliografia" class="level3">
+<h3 class="anchored" data-anchor-id="bibliografia">Bibliografia:</h3>
+<p>Regenstein Jr., Jonathan K.;<strong>Reproducible Finance with R</strong>, CRC press, 2019.</p>
+<p>Perlin, Marcelo S.; <strong>Processing and Analyzing Financial Data with R</strong>, 2018. disponível em :https://www.msperlin.com/padfeR/</p>
+<p>Picerno, James; <strong>Quantitative investment Portfoilo Analytic in R</strong>,LLC, 2018.</p>
+</section>
+<section id="finanças-com-r-aula-3---risco-dos-ativos" class="level2">
+<h2 class="anchored" data-anchor-id="finanças-com-r-aula-3---risco-dos-ativos">Finanças com R Aula 3 - Risco dos ativos</h2>
+<section id="sumário" class="level3">
+<h3 class="anchored" data-anchor-id="sumário">Sumário</h3>
+<ol type="1">
+<li><p>Cálculo e visualização do desvio padrão e do desvio em rolagem de janelas de tempo.</p></li>
+<li><p>Cálculo e visualização da assimetria e em rolagem de janelas de tempo.</p></li>
+<li><p>Cálculo e visualização da curtose e em rolagem de janelas de tempo.</p></li>
+<li><p>Construção de um Shiny apps para desvio padrão, assimetria e curtose.</p></li>
+</ol>
+</section>
+<section id="introdução" class="level3">
+<h3 class="anchored" data-anchor-id="introdução">Introdução</h3>
+<p>O conceito de risco é amplamente conhecido em sua forma coloquial, representa ter um acidente, de natureza conhecida, frente a um resultado esperado. Assim quando iniciamos a caminhar estaríamos sujeitos a tropeços e tombos de maior ou menor consequências. Estes tombos eram os riscos que aquela atividade apresentava. Mais tarde aprendemos a atravessar a rua e no começo todo cuidado era pouco, olhávamos de forma cuidadosa a cada lado. A medida que nos habituamos, lidamos melhor com a presença do risco. Talvez movidos pela prática, ou por nos imputamos uma melhor compreensão dos mesmos. Compare como você lida com a atividade de atravessar a rua hoje em dia, e quando aprendeu a atravessar.</p>
+<p>O risco advém da exposição a uma condição adversa de natureza conhecida, e cuja ocorrência, embora provável, não pode ser prevista com exatidão. Não conheço nenhum motorista, considerado racional, que ao entrar em seu carro premeditadamente diga: “Vou dar uma batida hoje”. A condição adversa é a batida, porque é um acidente, quando comparado ao resultado desejável de uma viagem tranquila, cuja natureza é conhecida, e de provável ocorrência. Um evento é de natureza conhecida quando a distribuição de probabilidades relacionada é conhecida. Outros adventos enquanto dirigimos que poderiam ser caracterizados como riscos seriam: uma falha do motor, ou um pneu furado. Claro que uma maior habilidade altera a exposição ao risco, assim o indivíduo com maior habilidade ao volante esta sujeito a um risco menor quando comparado a um iniciante. Então o risco relativo é maior para o iniciante, embora a condição de risco esteja presente a ambos. O risco é percebido como o afastamento do resultado esperado, nas observações ao repetir um processo. Está portanto, ligado a variação do resultado de um projeto, ativo, ou processo. E neste caso tal variação pode ser positiva ou negativa, basta se afastar do resultado esperado. Assim, consideramos risco se uma melhora da economia resulta em maiores lucros de uma empresa, bem como a ocorrência de uma crise da economia que poderia resultar numa queda de seus lucros.</p>
+<p>Destarte, o risco deriva das decisões tomadas pelo agente, frente a diferentes oportunidades; a decisão de quando atravessar, ou de correr ou andar, de dirigir ou não etc. São exemplos de decisões que expõem o agente a diferentes riscos. Em todas estas ações o agente toma decisões sob riscos e incertezas, cuja natureza da distribuição das probabilidades do evento não conhecemos ou não podem ser previamente relacionadas a decisão e cujas consequências em alguma extensão podem ser imprevisíveis.</p>
+<p>Normalmente, mesmo para decisões sob incertezas o gestor deverá tomar probabilidades subjetivas aos prováveis resultados, através de sua experiência, pesquisa ou consulta a outros. Na prática os gestores quando tomam probabilidades subjetivas se utilizam de uma distribuição triangular, caracterizada por associar uma probabilidade a cada um dos três cenários: um otimista, um normal, e outro pessimista. Assim, feitas estas ressalvas, utilizaremos indiscriminadamente no restante do texto as palavras incerteza e risco, como situações que envolvem decisões com risco <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Nas aulas anteriores foi dito que o gestor baliza suas decisões numa busca soluções ótimas movido pela criação de valor para o acionista. Estas decisões importam sempre em trocas, ou “trade-off”, entre oportunidades de menor risco ou maior retorno. Ao decidir que exposição ao risco irá tolerar, o gestor deverá considerar com o perfil do investidor frente ao risco <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Quanto as suas preferências um investidor poderá ser classificado como avesso ao risco, indiferente ao risco e por fim como propenso ao risco, de acordo com sua utilidade esperada. Se sua utilidade esperada for respectivamente menor, igual ou maior do que o valor esperado do retorno de um projeto ou ativo sujeito a risco. A título de exemplo tomemos um evento W que dependa de uma moeda, tal que quando der cara o agente receba x1, e quando der coroa receba, x2. Assim, se π representa a probabilidade associada a x1 o retorno esperado de E[W], que representa a média ponderada pelas probabilidades, expressa em moeda, poderá ser obtido por:</p>
+<p><span class="math display">\[E[W]=πx1 +(1−π)x2 \]</span></p>
+<p>Para a função utilidade <span class="math inline">\(U(W)\)</span> com <span class="math inline">\(U′(W)≥ 0\)</span> e <span class="math inline">\(U′′(W)≤ 0\)</span>, podemos definir as atitudes frente ao risco mais precisamente como se segue:</p>
+<p>Aversão ao risco <span class="math inline">\(U[E[W] &gt; E[W]\)</span></p>
+<p>Indiferença ao risco <span class="math inline">\(U[E[W] = E[W]\)</span></p>
+<p>Propensão ao risco <span class="math inline">\(U[E[W] &lt; E[W]\)</span></p>
+<p>Assim, os agentes variam em sua predisposição a tomar riscos. A esta altura você deverá estar se perguntando como é seu comportamento frente ao risco? Tenha calma normalmente alteramos nosso comportamento frente as oportunidades e cenários a que somos expostos ao longo do tempo.</p>
+<p><span class="math display">\[\color{darkblue}{\textbf{Para Refletir}}\]</span></p>
+<p>O participante de uma apólice de seguros têm que predisposição frente ao risco?</p>
+<p>E a companhia de seguros?</p>
+</section>
+<section id="como-medimos-o-risco-de-um-ativo-projeto-ou-processo" class="level3">
+<h3 class="anchored" data-anchor-id="como-medimos-o-risco-de-um-ativo-projeto-ou-processo">Como medimos o risco de um ativo, projeto, ou processo?</h3>
+<p>Como o risco está associado a variação dos resultados obtidos pela repetição do processo utilizamos a estatística do desvio padrão para sua mensuração e o coeficiente de variação para comparação. Como vimos, o retorno esperado (valor médio) pode ser obtido pela equação (1), que em sua forma mais geral será:</p>
+<p><span class="math display">\[\bar{X}=\sum_{i=1}^n{\pi_iX_i}\]</span></p>
+<p>Onde <span class="math inline">\(X_i\)</span> representa o resultado obtido na iésima observação, e <span class="math inline">\(\bar{X}\)</span> o valor médio Então a variância será :</p>
+<p><span class="math display">\[\sigma^2 = \frac{1}{n} \pi [X_i-\bar{X}]^2\]</span> e o desvio padrão será:</p>
+<p><span class="math display">\[ \sigma = \sqrt{\sigma^2}\]</span></p>
+<p>Conhecendo-se os valores do resultado esperado e do desvio padrão pode-se inferir entre com que probabilidades o resultado estará entre dois determinados valores utilizando uma tabela da curva normal padronizada<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Alguns destes resultados são padronizados e apresentados na figura1.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.pinimg.com/originals/10/e1/b8/10e1b8e56213fa1c9a79f5b4b11c326d.png" class="img-fluid figure-img"></p>
+<figcaption>Figura 1- Normal padronizada e porcentagens como variações de desvios padrões</figcaption>
+</figure>
+</div>
+<section id="como-comparar-os-riscos" class="level4">
+<h4 class="anchored" data-anchor-id="como-comparar-os-riscos">Como comparar os riscos</h4>
+<p>Pelo exposto fica claro que o agente avesso a risco escolherá dentre dois projetos ou ativos com igual valor esperado de retorno aquele que apresentar o menor desvio padrão. Assim, seu resultado terá um menor intervalo de oscilação. (Você é capaz de mostrar isto graficamente?) Mas, como se deve comparar projetos ou ativos de diferentes rentabilidades? Neste caso se utilizará uma medida relativa de risco, que se denomina de coeficiente de variação (CV). O coeficiente de variação pode ser interpretado como uma medida de eficiência da exposição ao risco. Seu cálculo corresponde a razão entre o desvio padrão e o retorno esperado. E representa quantas unidades adicionais de risco se está admitindo por cada unidade de retorno. Portanto, quanto menor o CV melhor o projeto, ativo avaliado ou processo avaliado.</p>
+<p><span class="math display">\[ CV= \frac{\sigma}{\bar{K}}\]</span> onde <span class="math inline">\(\bar{K}\)</span></p>
+<p>representa o retorno médio.</p>
+<p>Após esta revisão voltemos ao nosso objetivo.</p>
+</section>
+</section>
+<section id="retorno-e-risco-de-carteiras." class="level3">
+<h3 class="anchored" data-anchor-id="retorno-e-risco-de-carteiras.">Retorno e Risco de carteiras.</h3>
+<p>Na aula passada avaliamos o retorno dos ativos e de nosso portfólio. Recuperando os valores para os retornos dos ativos no ambiente xts temos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>symbols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"SPY"</span>,<span class="st">"EFA"</span>, <span class="st">"IJS"</span>, <span class="st">"EEM"</span>,<span class="st">"AGG"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>prices <span class="ot">&lt;-</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">getSymbols</span>(symbols, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">src =</span> <span class="st">'yahoo'</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">from =</span> <span class="st">"2012-12-31"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">to =</span> <span class="st">"2017-12-31"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">auto.assign =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">warnings =</span> <span class="cn">FALSE</span>,) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span><span class="fu">Ad</span>(<span class="fu">get</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce</span>(merge) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(symbols)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#to monthly prices</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>prices_monthly<span class="ot">&lt;-</span>prices <span class="sc">%&gt;%</span> </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">to.monthly</span>(<span class="at">indexAt =</span> <span class="st">"lastof"</span>, <span class="at">OHLC =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#computing returns</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>asset_monthly_returns_xts <span class="ot">&lt;-</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Return.calculate</span>(prices_monthly, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"log"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>   <span class="fu">na.omit</span>() </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(asset_monthly_returns_xts,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  SPY        EFA        IJS          EEM           AGG
+2013-01-31 0.04992297  0.0366064 0.05213321 -0.002935353 -0.0062310171
+2013-02-28 0.01267799 -0.0129692 0.01617562 -0.023105230  0.0058910226
+2013-03-31 0.03726842  0.0129692 0.04025792 -0.010235010  0.0009848202</code></pre>
+</div>
+</div>
+<p>Antes de prosseguir ao cálculo do risco de uma carteira será necessário revisar o conceito de covariância. Numa carteira coexistem mais de um ativo e a forma como o retorno de um se relaciona ao retorno do outro se torna importante ao se buscar calcular o risco de uma carteira. A medida estatística que mede esta relação ou interdependência é a covariância.</p>
+<p>A covariância ou variância conjunta é um momento conjunto de segunda ordem das variáveis X e Y, centrados nas respectivas medias, é a média do grau de interdependência ou inter-relação numérica entre elas.</p>
+<p><span class="math display">\[ Cov (X,Y) = \sigma_{XY} = \sum_{i=1}^{n}{(X_i-\bar{X})(Y_i-\bar{Y})w_{X_i}w_{Y_i}}\]</span></p>
+<p>onde w pode ser a frequência relativa (o peso), ou a probabilidade de ocorrer o par (Xi, Yi).</p>
+<p>ou</p>
+<p><span class="math display">\[ Cov (X,Y) = \frac{1}{n} [ \sum_{i=1}^{n}{X_iY_i - \frac{i}{n}(\sum_{i=1}^{n}{X_i}\sum_{i=1}^{n}{Y_i})]}\]</span></p>
+<p>Outras propriedades importantes relativas a covariância são:</p>
+<p><span class="math inline">\(Cov(X,Y) = Cov(Y,X)\)</span></p>
+<p><span class="math inline">\(Cov(X,X) = Var X = \sigma^2\)</span></p>
+<p><span class="math inline">\(Cov(aX+b, cY+d)= ac Cov(X,Y)\)</span></p>
+<p><span class="math inline">\(Cov(\sum_i{X_i}\sum_j{Y_j})= \sum_i\sum_j{Cov(X_i,Y_j)}\)</span></p>
+<p>Se X e Y são independentes Cov(X,Y)=0</p>
+<p>O coeficiente de correlação <span class="math inline">\(\rho_XY\)</span> , é uma medida de covariância padronizada pelos desvios padrões das variáveis relacionadas X e Y, e nunca pode ser maior do que 1 ou menor do que -1.</p>
+<p><span class="math display">\[\rho = \frac{\sigma_{XY}}{\sigma_x\sigma_y}\]</span> Uma correlação próxima a zero indica que as duas variáveis quase não estão relacionadas. Uma correlação positiva indica que as duas variáveis movem juntas, e a relação é forte quanto mais a correlação se aproxima de um. Uma correlação negativa indica que as duas variáveis movem-se em direções opostas, e a relação também fica mais forte quanto mais próxima de -1 a correlação ficar. Duas variáveis que estão perfeitamente correlacionadas positivamente (<span class="math inline">\(\rho=1\)</span>) movem-se essencialmente em perfeita proporção na mesma direção, enquanto dois conjuntos que estão perfeitamente correlacionados negativamente (<span class="math inline">\(\rho=-1\)</span>) movem-se em perfeita proporção em direções opostas.</p>
+<p><span class="math display">\[\color{darkblue}{\textbf{Para Refletir}}\]</span></p>
+<p><span class="math display">\[\color{darkblue}{\text{ O resultado de uma carteira composta de dois ativos de risco poderá ser uma carteira sem risco?}}\]</span></p>
+<p>Os estudos sobre a seleção de carteira tiveram um grande impulso com Markowitz<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, ele tornou clara a sabedoria popular de que não se deve por todos os ovos em uma mesma cesta. Ou em termos financeiros que o risco da carteira apesar de também ser representado pelo desvio padrão da carteira, será menor que o maior risco dentre os ativos nela presentes. Seu cálculo também será precedido do cálculo da variância da carteira.</p>
+<p>A variância de uma carteira C de dois ativos (X e Y) será:</p>
+<p><span class="math display">\[ \sigma_C^2= w_X^2\sigma_X^2 + w_Y^2\sigma_Y^2 + 2 w_X w_Y \sigma_{XY}\]</span></p>
+<p>ou</p>
+<p><span class="math display">\[ \sigma_C^2= w_X^2\sigma_X^2 + w_Y^2\sigma_Y^2 + 2 w_X w_Y \rho_{XY}\sigma_X \sigma_{Y}\]</span></p>
+<p>e claro,</p>
+<p><span class="math display">\[ \sigma_C=\sqrt{\sigma_C^2}\]</span></p>
+<p>Para nossa sorte no R é muito fácil obter as covariâncias, e em form de matriz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>covariance_matrix <span class="ot">&lt;-</span> <span class="fu">cov</span>(asset_monthly_returns_xts) </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(covariance_matrix,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         SPY     EFA      IJS     EEM    AGG
+SPY  0.00074 0.00070  0.00083 0.00068 -1e-05
+EFA  0.00070 0.00106  0.00065 0.00104  4e-05
+IJS  0.00083 0.00065  0.00157 0.00064 -8e-05
+EEM  0.00068 0.00104  0.00064 0.00175  1e-04
+AGG -0.00001 0.00004 -0.00008 0.00010  7e-05</code></pre>
+</div>
+</div>
+<section id="calculo-do-desvio-padrão-da-carteira" class="level4">
+<h4 class="anchored" data-anchor-id="calculo-do-desvio-padrão-da-carteira">Calculo do desvio padrão da carteira</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>w<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.25</span>,<span class="fl">0.25</span>,<span class="fl">0.20</span>,<span class="fl">0.20</span>,<span class="fl">0.10</span>) <span class="co"># os  pesos definidos para o portifolio</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sd_matrix_algebra<span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">t</span>(w) <span class="sc">%*%</span> covariance_matrix <span class="sc">%*%</span> w)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sd_matrix_algebra_percent<span class="ot">&lt;-</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(sd_matrix_algebra<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"desvio padrão"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sd_matrix_algebra_percent[<span class="dv">1</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>desvio padrão 
+         2.66 </code></pre>
+</div>
+</div>
+<p>Embora o cálculo da <em>sd_matrix_algebra</em> agora ela nos será útil mais adiante no curso. Examine seu cálculo. Você é capaz de explicar o que esta instrução está realizando em relação a fórmula exposta?</p>
+<p>####Desvio padrão no ambiente xts</p>
+<p>Aqui utilizaremos a função PerformanceAnalytics::StdDev() obtendo diretamente dos preços dos ativos o desvio padrão. A função necessita de dois argumentos: os preços e o vetor de pesos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># computation of portfolio returns as before</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>portfolio_returns_xts_rebalanced_monthly<span class="ot">&lt;-</span><span class="fu">Return.portfolio</span>(asset_monthly_returns_xts,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weights =</span> w,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rebalance_on =</span> <span class="st">"months"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">type=</span> <span class="st">"discrete"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"returns"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># computation of std in xts</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>porfolio_sd_xts_builtin<span class="ot">&lt;-</span><span class="fu">StdDev</span>(portfolio_returns_xts_rebalanced_monthly, <span class="at">weigths=</span>w)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>porfolio_sd_xts_builtin_percent<span class="ot">&lt;-</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(porfolio_sd_xts_builtin<span class="sc">*</span><span class="dv">100</span>, <span class="dv">2</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>porfolio_sd_xts_builtin_percent[<span class="dv">1</span>,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>StdDev 
+  2.66 </code></pre>
+</div>
+</div>
+</section>
+<section id="calculando-o-desvio-padrão-no-tidyverse" class="level4">
+<h4 class="anchored" data-anchor-id="calculando-o-desvio-padrão-no-tidyverse">Calculando o desvio padrão no Tidyverse</h4>
+<p>Vamos rever como obtivemos o retorno do portifólio no tidyverse rapidamente, nada disso é novidade.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convert the index to a date xts package</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a> asset_monthly_returns_long_tbl<span class="ot">&lt;-</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  asset_monthly_returns_xts <span class="sc">%&gt;%</span>   </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">date =</span> <span class="fu">index</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># now remove the index because it got converted to row names</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_rownames</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(asset, returns, <span class="sc">-</span>date)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># inserting the weights </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>asset_monthly_returns_long_with_weights_tbl<span class="ot">&lt;-</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  asset_monthly_returns_long_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(asset) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weights =</span> <span class="fu">case_when</span>(</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    asset<span class="sc">==</span>symbols[<span class="dv">1</span>] <span class="sc">~</span> w[<span class="dv">1</span>],</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    asset<span class="sc">==</span>symbols[<span class="dv">2</span>] <span class="sc">~</span> w[<span class="dv">2</span>],</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    asset<span class="sc">==</span>symbols[<span class="dv">3</span>] <span class="sc">~</span> w[<span class="dv">3</span>],</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    asset<span class="sc">==</span>symbols[<span class="dv">4</span>] <span class="sc">~</span> w[<span class="dv">4</span>],</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    asset<span class="sc">==</span>symbols[<span class="dv">5</span>] <span class="sc">~</span> w[<span class="dv">5</span>])) </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#computing portfolio retuns</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>portifolio_monthly_returns_dplyr_byhand<span class="ot">&lt;-</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  asset_monthly_returns_long_with_weights_tbl <span class="sc">%&gt;%</span> </span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">weighted_returns =</span> returns<span class="sc">*</span>weights) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">returns =</span> <span class="fu">sum</span>(weighted_returns))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(portifolio_monthly_returns_dplyr_byhand, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  date         returns
+  &lt;date&gt;         &lt;dbl&gt;
+1 2013-01-31  0.0308  
+2 2013-02-28 -0.000870
+3 2013-03-31  0.0187  
+4 2013-04-30  0.0206  </code></pre>
+</div>
+</div>
+<p>Agora que recuperamos o arquivo <em>portifolio_monthly_returns_dplyr_byhand</em> calcularemos o desvio padrão do portifólio.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>portfolio_sd_tidyverse <span class="ot">&lt;-</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">dplyr =</span> <span class="fu">sd</span>(returns)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dplyr =</span> <span class="fu">round</span>(dplyr, <span class="dv">4</span>) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>portfolio_sd_tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  dplyr
+  &lt;dbl&gt;
+1  2.66</code></pre>
+</div>
+</div>
+</section>
+<section id="utilizando-o-tidyquant-para-calcular-o-desvio-padrão-do-portifólio" class="level4">
+<h4 class="anchored" data-anchor-id="utilizando-o-tidyquant-para-calcular-o-desvio-padrão-do-portifólio">Utilizando o Tidyquant para Calcular o Desvio Padrão do Portifólio</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>portfolio_sd_tq <span class="ot">&lt;-</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tq_performance</span>(<span class="at">Ra =</span> returns,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Rb =</span> <span class="cn">NULL</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">performance_fun =</span> table.Stats) <span class="sc">%&gt;%</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Stdev) <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tq_sd =</span> <span class="fu">round</span>(Stdev, <span class="dv">4</span>) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>portfolio_sd_tq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+   Stdev tq_sd
+   &lt;dbl&gt; &lt;dbl&gt;
+1 0.0266  2.66</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="visualizando-o-desvio-padrão" class="level3">
+<h3 class="anchored" data-anchor-id="visualizando-o-desvio-padrão">Visualizando o desvio padrão</h3>
+<p>Iniciaremos com os retornos do Tidyverse e utilizando o ggplot().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> returns)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Dispersão dos Retornos por data"</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Agora podemos examinar que retornos se apresentam fora do intervalo $ [-+{K}, ++{K}]$</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criamos os indicadores</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sd_plot <span class="ot">&lt;-</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sd</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mean_plot <span class="ot">&lt;-</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Agora para destacar os pontos de acordo com o intervalo escolhido utilizaremos o dplyr::mutate() para criar as três colunas correspondentes utilizando a lógica if-else.</p>
+<p>Se os retornos forem mais distantes que a média menos um desvio padrão os marcaremos de vermelho e a coluna criada será <em>faixa_inferior</em>. Se os retornos estiverem acima de média mais um desvio padrão marcaremos os pontos em verde e denominaremos <em>faixa_superior</em>. E se os retornos estiverem na faixa central marcaremos em azul e denominaremos esta coluna de <em>faixa_central</em>. Note que para isso criamos os pontos dos retornos de cada faixa e os pontos que não correspondem recebem um NA com tipo númerico.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">faixa_inferior =</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(returns <span class="sc">&lt;</span> (mean_plot <span class="sc">-</span> sd_plot),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                  returns, <span class="fu">as.numeric</span>(<span class="cn">NA</span>)),</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">faixa_superior =</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(returns <span class="sc">&gt;</span> (mean_plot <span class="sc">+</span> sd_plot),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                  returns, <span class="fu">as.numeric</span>(<span class="cn">NA</span>)),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">faixa_central =</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(returns <span class="sc">&gt;</span> (mean_plot <span class="sc">-</span> sd_plot) <span class="sc">&amp;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                  returns <span class="sc">&lt;</span> (mean_plot <span class="sc">+</span> sd_plot),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                  returns, <span class="fu">as.numeric</span>(<span class="cn">NA</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> faixa_inferior),</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> faixa_superior),</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> faixa_central),</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> (mean_plot <span class="sc">+</span> sd_plot),</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"purple"</span>,</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_hline</span>(<span class="at">yintercept =</span> (mean_plot<span class="sc">-</span>sd_plot),</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"purple"</span>,</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>           <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição Padronizada Colorida"</span>, <span class="at">y =</span> <span class="st">"Retornos Mensais"</span>) <span class="sc">+</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/intervalo%20média%20mais%20ou%20menos%20sigma-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><span class="math display">\[\color{darkblue}{\textbf{Para Refletir}}\]</span></p>
+<p><span class="math display">\[\color{darkblue}{\text{ O que salta aos olhos no gráfico acima?}}\]</span></p>
+<section id="risco-individual-e-risco-sistemico" class="level4">
+<h4 class="anchored" data-anchor-id="risco-individual-e-risco-sistemico">Risco individual e Risco Sistêmico</h4>
+<p>Um ativo trás consigo os riscos da organização emissora. Isto significa que parte das oscilações dos preços que se verificam nos mercados são devidos as informações adquiridas pelos investidores relativas as escolhas desta organização, de seus dirigentes, ou mesmo referentes ao seu setor ou ramo de atuação.</p>
+<p>Assim, uma notícia boa elevará o preço do ativo, e uma notícia ruim o reduzirá. Isto ocorre porque os investidores estão criando expectativas sobre os resultados futuros e formam o preço do ativo comprando e vendendo o papel.</p>
+<p>Uma carteira a medida que aumenta o número de ativos que a compõe apresentará uma diversificação ou eliminação parcial ou total destes riscos individuais, pelos quais não será remunerado e portanto não precisa assumir.</p>
+<p>Entretanto, existem riscos que estão presentes para todos os participantes de determinado mercado. São riscos relativos projeções sobre a economia global e principalmente da economia local, tais como: inflação; a projeção de crescimento, a taxa de desemprego, a taxa de juros, acordos internacionais, e qualquer outra política ou indicador que venha a influenciar o resultado das organizações como um todo. Isto significa que haverá um limite para a diversificação, e que as empresas experimentarão uma parcela de risco relativo ao seu mercado denominado risco sistêmico ou não diversificável. Embora estes possam ser mitigados através dos mercados de derivativos.</p>
+<p>No cálculo do risco de uma carteira, o número de termos da equação será o quadrado do número de ativos <span class="math inline">\((n^2)\)</span>. Os termos em variância estarão presentes no mesmo número que o de ativos <span class="math inline">\((n)\)</span>. E os termos em covariâncias, serão todos os demais <span class="math inline">\((n^2-n)\)</span>, estes termos crescem em número mais rapidamente, e assumem uma maior importância na determinação do risco da carteira.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.pinimg.com/originals/1b/e4/dc/1be4dcd09266a99fbf0878a9bc910548.png" class="img-fluid figure-img" data-scale="80%"></p>
+<figcaption>Figura 2: Representatividade dos diversos termos no risco da carteira.</figcaption>
+</figure>
+</div>
+<p>Markowitz foi pioneiro em apontar que os efeitos associativos reduziriam o risco total da carteira, e você teve a chance desta mesma reflexão após realizar os exercícios propostos, e ainda de compreender que as próprias carteiras podem ser vistas como ativos e sua associação também levará a uma diversificação desde que não possuam a mesma configuração. Isto porque na carteira resultante haverá uma diluição da participação individual de cada ativo original. Os efeitos da diversificação em relação ao número de ativos pode ser verificada no gráfico abaixo. Lembre-se que a partir de um certo número apesar do efeito de diversificação não cessar o risco da carteira praticamente igualará ao risco de sistêmico e talvez não se justifique a inclusão de novos ativos pela razão de diversificação.</p>
+<p>Agora que entendemos as razões para montar um portifólio iremos seguir nossa análise utilizando o R.</p>
+<p>Construiremos uma visualização que contextualize o desvio padrão do portifólio comparativamente aos ativos que compõem a carteira. Tecnicamente o portfólio deverá apresentar uma melhor relação, senão porque incomodar-se em construí-lo.</p>
+<p>Iniciaremos com ** arquivo ** e calculremos a média e desvio padrão de cada ativo com summarise(expected_return = mean(returns), sd = sd(returns)).</p>
+<p>Em seguida utilizaremos dplyr::add_row() para adicionaros resultados de média e desvio padrão do portifólio.</p>
+<p>Finalizamos, com as chamadas de ggplot() e geom_point().</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>asset_monthly_returns_long_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(asset) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">expected_return =</span> <span class="fu">mean</span>(returns),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">stand_dev =</span> <span class="fu">sd</span>(returns)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add_row</span>(<span class="at">asset =</span> <span class="st">"Portfolio"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stand_dev =</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sd</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">expected_return =</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> stand_dev,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> expected_return,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> asset)) <span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a> <span class="fu">aes</span>(<span class="at">x =</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sd</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns) <span class="sc">*</span> <span class="fl">1.11</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(portifolio_monthly_returns_dplyr_byhand<span class="sc">$</span>returns),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">"Portfolio"</span>)) <span class="sc">+</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ylab</span>(<span class="st">"expected return"</span>) <span class="sc">+</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="fu">xlab</span>(<span class="st">"standard deviation"</span>) <span class="sc">+</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggtitle</span>(<span class="st">"Returns versus Risk"</span>) <span class="sc">+</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">label =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="at">label =</span> scales<span class="sc">::</span>percent, <span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># The next line centers the title</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_update</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/comparando%20portifólio%20e%20ativos-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>O S&amp;P500 apresenta um retorno esperado maior com apenas um pouco a mais de risco que o nosso portifólio. EEM e EFA apresentam um risco maior e menor retorno esperado e nenhum investidor racional desejará isto, enquanto que alguns investidores poderão desejar o maior retorno e risco apresentado por IJS.</p>
+</section>
+</section>
+<section id="rolando-o-desvio-padrão" class="level3">
+<h3 class="anchored" data-anchor-id="rolando-o-desvio-padrão">Rolando o desvio padrão</h3>
+<p>Estivemos calculando a volatilidade média para todo o período examinado do portifólio. Porém, poderia ser útil entender como diferentes condições de mercado influenciaram nosso portifólio.</p>
+<p>Podemos ter perdido um pico de subida ou descida de volatilidade de três ou seis meses na volatilidade. E quanto maior a vida de nosso portifólio mais provável que tenhamos perdido algo. E se nosso período de análise do portifólio for de 10 ou 20 anos teríamos falhado ao calcular os valores de desvio padrão para o todo em observar um período em que a volatilidade apresentava-se extremamente alta e ponderar a probabilidade de sua ocorrência.</p>
+<p>Imagine um portifólio cujo desvio padrão dos retornos seja de 3% para cada periodo de seis meses e nunca se altere. Agora imagine um portifólio cuja volatilidade se alterne a cada seis meses em 0% ou 6%. Para ambos poderíamos encontrar o valor de 3% num período de 10 anos, mas estes portifólios não exibem a mesma volatilidade.</p>
+<p>A rolagem da volatilidade de cada nos mostraria as diferenças, permitindo-nos criar hipóteses sobre as causas e calcular as probabilidades de futuras ocorrências dessas diferenças. Poderíamos ainda desejar rebalancear dinamicamente nosso portifólio para melhor gerenciar a volatilidade se na presença de grandes saltos nas janelas de rolagem.</p>
+<section id="rolando-o-desvio-padrão-no-xts" class="level4">
+<h4 class="anchored" data-anchor-id="rolando-o-desvio-padrão-no-xts">Rolando o Desvio Padrão no Xts</h4>
+<p>Como o XTS foi idealizado para o trabalho com séries temporais a rolagem é muito direta. Primeiro estabeleceremos o período da janela. depois invocaremos a função rollapply(), passando nosso objeto xts, e sd() como function, e ainda a janela de rolagem window com width = window.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>window<span class="ot">&lt;-</span><span class="dv">24</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>port_rolling_sd_xts <span class="ot">&lt;-</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rollapply</span>(portfolio_returns_xts_rebalanced_monthly,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">FUN =</span> sd,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">width =</span> window) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># omit the 23 months for which there is no rolling 24</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># month standard deviation</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"rolling_sd"</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(port_rolling_sd_xts, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           rolling_sd
+2014-12-31 0.02618714
+2015-01-31 0.02620224
+2015-02-28 0.02748030</code></pre>
+</div>
+</div>
+</section>
+<section id="rolando-o-desvio-padrão-no-tidyverse-com-tibbletime" class="level4">
+<h4 class="anchored" data-anchor-id="rolando-o-desvio-padrão-no-tidyverse-com-tibbletime">Rolando o Desvio Padrão no Tidyverse com Tibbletime</h4>
+<p>Temos duas opções para calcular o desvio padrão das janelas de rolagem do arquivo tibble.</p>
+<p>Poderemos utilizar o <strong>tidyquant</strong>, ou converter para um tibble indexado ao tempo utilizando o pacote <strong>tibbletime</strong>.</p>
+<p>Para utilizr o <strong>tidyquant</strong>, inicia-se com tq_mutate() fornecendo <strong>mutate_fun = rollapply</strong> como argumento de sua função mutate. Então, envoque <em>FUN = sd</em> como a função aninhada em rollapply(). Esta combinação aplicará a sd() na rolagem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>port_rolling_sd_tq <span class="ot">&lt;-</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tq_mutate</span>(<span class="at">mutate_fun =</span> rollapply,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">width =</span> window,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> sd,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">col_rename =</span> <span class="st">"rolling_sd"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(date, rolling_sd) <span class="sc">%&gt;%</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">na.omit</span>()</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>(<span class="fu">head</span>(port_rolling_sd_tq, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  date       rolling_sd
+  &lt;date&gt;          &lt;dbl&gt;
+1 2014-12-31     0.0262
+2 2015-01-31     0.0262
+3 2015-02-28     0.0275</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">tail</span>(port_rolling_sd_tq, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  date       rolling_sd
+  &lt;date&gt;          &lt;dbl&gt;
+1 2017-10-31     0.0234
+2 2017-11-30     0.0233
+3 2017-12-31     0.0217</code></pre>
+</div>
+</div>
+<p>Outra forma seria utilizando <strong>tibbletime</strong>, neste caso primeiro chamamos <strong>rollify()</strong> para rolagem da função <strong>sd()</strong> que calcula o desvio padrão em bases rolantes. Depois utiliza-se o <strong>mutate()</strong> para passar o fluxo do código. Note que converteremos nosso tibble para data frame do tibbletime com <strong>as_tbl_time(index = date)</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sd_roll_24 <span class="ot">&lt;-</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rollify</span>(sd, <span class="at">window =</span> window)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>port_rolling_sd_tidy_tibbletime <span class="ot">&lt;-</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tbl_time</span>(<span class="at">index =</span> date) <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sd =</span> <span class="fu">sd_roll_24</span>(returns)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>returns) <span class="sc">%&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>(<span class="fu">head</span>(port_rolling_sd_tidy_tibbletime, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A time tibble: 3 × 2
+# Index:         date
+  date           sd
+  &lt;date&gt;      &lt;dbl&gt;
+1 2014-12-31 0.0262
+2 2015-01-31 0.0262
+3 2015-02-28 0.0275</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">tail</span>(port_rolling_sd_tidy_tibbletime, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A time tibble: 3 × 2
+# Index:         date
+  date           sd
+  &lt;date&gt;      &lt;dbl&gt;
+1 2017-10-31 0.0234
+2 2017-11-30 0.0233
+3 2017-12-31 0.0217</code></pre>
+</div>
+</div>
+<p>###Visualização do desvio padrão em bases rolantes</p>
+<p>Highcharter é um pacote de R mas, Highcharts é uma biblioteca de JavaScript — o pacote de R é um gancho para a biblioteca JavaScript. Highcharts é fantástico para visualização de séries temporais vem com dispositivos para exibição de prazos variados. Embora gratuíto para uso pessoal ou acadêmico é necessária licença para utilização comercial.</p>
+</section>
+<section id="no-xts-utilizando-highcharter" class="level4">
+<h4 class="anchored" data-anchor-id="no-xts-utilizando-highcharter">No xts utilizando highcharter</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arredondando as percentagens</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>port_rolling_sd_xts_hc <span class="ot">&lt;-</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(port_rolling_sd_xts, <span class="dv">4</span>) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">highchart</span>(<span class="at">type =</span> <span class="st">"stock"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_add_series</span>(port_rolling_sd_xts_hc,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"darkblue"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_title</span>(<span class="at">text =</span> <span class="fu">paste0</span>(window, <span class="st">"-Month Rolling Volatility"</span>, <span class="at">sep =</span> <span class="st">""</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_add_theme</span>(<span class="fu">hc_theme_flat</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_yAxis</span>(</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">list</span>(<span class="at">format =</span> <span class="st">"{value}%"</span>),</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">opposite =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_navigator</span>(<span class="at">enabled =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_scrollbar</span>(<span class="at">enabled =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_exporting</span>(<span class="at">enabled=</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="fu">hc_legend</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="highchart html-widget html-fill-item" id="htmlwidget-8a36663bc398ee74ab8c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-8a36663bc398ee74ab8c">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":"24-Month Rolling Volatility"},"yAxis":{"title":{"text":null},"labels":{"format":"{value}%"},"opposite":false},"credits":{"enabled":false},"exporting":{"enabled":true},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"series":[{"data":[[1419984000000,2.62],[1422662400000,2.62],[1425081600000,2.75],[1427760000000,2.76],[1430352000000,2.76],[1433030400000,2.76],[1435622400000,2.74],[1438300800000,2.66],[1440979200000,2.95],[1443571200000,2.83],[1446249600000,3.01],[1448841600000,3],[1451520000000,3.04],[1454198400000,3.06],[1456704000000,2.92],[1459382400000,3.32],[1461974400000,3.330000000000001],[1464652800000,3.31],[1467244800000,3.28],[1469923200000,3.37],[1472601600000,3.330000000000001],[1475193600000,3.2],[1477872000000,3.21],[1480464000000,3.22],[1483142400000,3.22],[1485820800000,3.23],[1488240000000,3.11],[1490918400000,3.1],[1493510400000,3.09],[1496188800000,3.09],[1498780800000,3.05],[1501459200000,3.07],[1504137600000,2.68],[1506729600000,2.56],[1509408000000,2.34],[1512000000000,2.33],[1514678400000,2.17]],"color":"darkblue"}],"navigator":{"enabled":false},"scrollbar":{"enabled":false},"legend":{"enabled":true}},"theme":{"colors":["#f1c40f","#2ecc71","#9b59b6","#e74c3c","#34495e","#3498db","#1abc9c","#f39c12","#d35400"],"chart":{"backgroundColor":"#ECF0F1"},"xAxis":{"gridLineDashStyle":"Dash","gridLineWidth":1,"gridLineColor":"#BDC3C7","lineColor":"#BDC3C7","minorGridLineColor":"#BDC3C7","tickColor":"#BDC3C7","tickWidth":1},"yAxis":{"gridLineDashStyle":"Dash","gridLineColor":"#BDC3C7","lineColor":"#BDC3C7","minorGridLineColor":"#BDC3C7","tickColor":"#BDC3C7","tickWidth":1},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#34495e","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"stock","fonts":[],"debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="no-ggplot" class="level4">
+<h4 class="anchored" data-anchor-id="no-ggplot">No ggplot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>port_rolling_sd_tq <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> rolling_sd), <span class="at">color =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rolling Standard Deviation"</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/sd%20rolante%20no%20ggplot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="examinando-a-contribuição-para-volatilidade-de-cada-ativo." class="level4">
+<h4 class="anchored" data-anchor-id="examinando-a-contribuição-para-volatilidade-de-cada-ativo.">Examinando a contribuição para volatilidade de cada ativo.</h4>
+<p>Voltemos a matriz covariância para o cálculo da contribuição marginal.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>(marginal_contribution<span class="ot">&lt;-</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  w <span class="sc">%*%</span> covariance_matrix <span class="sc">/</span> sd_matrix_algebra[<span class="dv">1</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            SPY        EFA        IJS        EEM          AGG
+[1,] 0.02482998 0.02941055 0.03021196 0.03458121 0.0007822798</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(component_contribution<span class="ot">&lt;-</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  marginal_contribution <span class="sc">*</span> w) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             SPY         EFA         IJS         EEM          AGG
+[1,] 0.006207495 0.007352638 0.006042391 0.006916243 7.822798e-05</code></pre>
+</div>
+</div>
+<p>Verificando</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>components_summed <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(component_contribution)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>components_summed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.026597</code></pre>
+</div>
+</div>
+<p>Contribuição percentual de cada componente</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>component_percentages<span class="ot">&lt;-</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  component_contribution <span class="sc">/</span>  sd_matrix_algebra[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(component_percentages, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       SPY   EFA   IJS  EEM   AGG
+[1,] 0.233 0.276 0.227 0.26 0.003</code></pre>
+</div>
+</div>
+<p>Agora que fizemos o passo a passo passaremos as formas funcionais.</p>
+</section>
+<section id="contributição-porcomponente-com-uma-função-customizada" class="level4">
+<h4 class="anchored" data-anchor-id="contributição-porcomponente-com-uma-função-customizada">Contributição porcomponente com uma função customizada</h4>
+<p>Você notou que partimos de valores pré calculados? Então, desta vez partiremos dos preços no xts e do vetor w de pessos passando-os como argumento da função que utilizará o fluxo do código acima. Denominaremos a <strong>função:component_contr_matrix_fun</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>component_contr_matrix_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(returns, w){</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># create covariance matrix</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>covariance_matrix <span class="ot">&lt;-</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cov</span>(returns)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate portfolio standard deviation</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>sd_portfolio <span class="ot">&lt;-</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(<span class="fu">t</span>(w) <span class="sc">%*%</span> covariance_matrix <span class="sc">%*%</span> w)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate marginal contribution of each asset</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>marginal_contribution <span class="ot">&lt;-</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  w <span class="sc">%*%</span> covariance_matrix <span class="sc">/</span> sd_portfolio[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># multiply marginal by weights vecotr</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>component_contribution <span class="ot">&lt;-</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  marginal_contribution <span class="sc">*</span> w</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="co"># divide by total standard deviation to get percentages</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>component_percentages <span class="ot">&lt;-</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  component_contribution <span class="sc">/</span> sd_portfolio[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>component_percentages <span class="sc">%&gt;%</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(asset, contribution)</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Verifique que as duas últimas linhas tansformam o resultado para um tibble e o converte para um formato tidy com <strong>gather(asset, contribution)</strong>.</p>
+<p>Testando nossa nova função:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>test_the_function_xts<span class="ot">&lt;-</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">component_contr_matrix_fun</span>(asset_monthly_returns_xts, w)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>test_the_function_xts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  asset contribution
+  &lt;chr&gt;        &lt;dbl&gt;
+1 SPY        0.233  
+2 EFA        0.276  
+3 IJS        0.227  
+4 EEM        0.260  
+5 AGG        0.00294</code></pre>
+</div>
+</div>
+<p>Sinta-se a vontade para deletar as duas linhas e verifique o que ocorre.</p>
+<p>Testaremos a função passando um tibble</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># passando para tibble</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>asset_returns_tibble<span class="ot">&lt;-</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  asset_monthly_returns_xts <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tk_tbl</span>(<span class="at">preserve_index =</span> <span class="cn">TRUE</span>, <span class="at">rename_index =</span> <span class="st">"date"</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># utilizando a função passando um tibble</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>percentages_tibble<span class="ot">&lt;-</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  asset_returns_tibble <span class="sc">%&gt;%</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>date) <span class="sc">%&gt;%</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">component_contr_matrix_fun</span>(., w)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>percentages_tibble</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  asset contribution
+  &lt;chr&gt;        &lt;dbl&gt;
+1 SPY        0.233  
+2 EFA        0.276  
+3 IJS        0.227  
+4 EEM        0.260  
+5 AGG        0.00294</code></pre>
+</div>
+</div>
+<p>Claro que não fomos os primeiros a pensr na utilidade de uma função assim. O pacote PerformanceAnalytics tem a função StdDev(asset_returns_xts, weights = w, portfolio_method = “component”).</p>
+<p>Entretanto, ao escrever sua própria função você detém maior flexibilidade. poderemos passar os dados em tibble e também organizar a saída da forma desejada. criatividade será sua única limitação já que agora você aprendeu como fazer novas funções.</p>
+</section>
+</section>
+<section id="visualizando-a-contribuição-dos-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="visualizando-a-contribuição-dos-componentes">Visualizando a contribuição dos componentes</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>percentages_tibble <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> asset, <span class="at">y =</span> contribution)) <span class="sc">+</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">'darkblue'</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> <span class="st">'red'</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">width =</span> .<span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent,</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n =</span> <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Percent Contribution to Standard Deviation"</span>) <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Percent Contribution to Risk"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/Visualizando%20a%20contribuição%20dos%20componentes%20-%20ggplot-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Este gráfico mostra as contribuições individuais, mas seria interessante ver um gráfico que compare o peso do ativo na carteira a sua contribuição.</p>
+<p>Para criar um gráfico assim, coloque o tibble num formato longo com gather(type, percent, -asset), depois com ggplot(aes(x = asset, y = percent, fill = type)). Posicione as colunas de forma que não fiquem empilhadas com geom_col(position=‘dodge’).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>percentages_tibble <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weights =</span> w) <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(type, percent, <span class="sc">-</span>asset) <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> asset,</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percent,</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">'dodge'</span>) <span class="sc">+</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Percent Contribution to Volatility"</span>) <span class="sc">+</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/dodge-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Este gráfico deixa claro que AGG, o fundo de títulos, faz um bom trabalho como redutor de volatilidade. Com apenas 10% allocation, mas contribui com praticamente nenhuma volatilidade.</p>
+</section>
+</section>
+<section id="finanças-com-r-aula-4---índice-sharp---is" class="level2">
+<h2 class="anchored" data-anchor-id="finanças-com-r-aula-4---índice-sharp---is">Finanças com R Aula 4 - Índice Sharp - IS</h2>
+<p>Este índice é definido como a razão entre a média do excesso de retorno mensal do portifólio com relação a taxa livre de risco com o desvio padrão do excesso.</p>
+<p>Esta medida reflete o retorno adicional por unidade de risco.</p>
+<p><span class="math display">\[ \text {índice de Sharpe} = \frac{(\overline{R_p-R_f})}{\sigma_{excesso}}\]</span></p>
+<p>Quanto maior o valor do índice melhor o portifólio. Para qualquer trabalho com o índice de sharpe precisaremos definir uma taxa livre de risco. Aqui tomaremos o valor de .3% am. então,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>rfr<span class="ot">&lt;-</span> .<span class="dv">0003</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A partir calcular o índice de Sharp no xts é bastante tranquilo utilizando <em>PerfomanceAnalytics::SharpRatio</em> e passando os argumentos <em>portifolio_returns_xts_rebalanced_monthly</em>, que desenvolvemos nas aula anteriores, e a taxa livre de risco <em>rfr</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>sharpe_xts<span class="ot">&lt;-</span> </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SharpeRatio</span>(portfolio_returns_xts_rebalanced_monthly, </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">Rf=</span> rfr,</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">FUN=</span> <span class="st">"StdDev"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"sharpe_xts"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>sharpe_xts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                              sharpe_xts
+StdDev Sharpe (Rf=0%, p=95%):  0.2753919</code></pre>
+</div>
+</div>
+<section id="índice-de-sharpe-no-tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="índice-de-sharpe-no-tidyverse">Índice de Sharpe no Tidyverse</h3>
+<p>Agora iremos usar a equação e computar com a ajuda dos <em>pipes</em> e do <em>dplyr::summarise</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sharpe_tidyverse_by_hand<span class="ot">&lt;-</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">sharpe_dplyr =</span> <span class="fu">mean</span>(returns<span class="sc">-</span>rfr)<span class="sc">/</span><span class="fu">sd</span>(returns<span class="sc">-</span>rfr))</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>sharpe_tidyverse_by_hand</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  sharpe_dplyr
+         &lt;dbl&gt;
+1        0.275</code></pre>
+</div>
+</div>
+<p>Comparemos agora com o Índice de Sharpe do S&amp;P500 no mesmo período.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>market_returns_xts<span class="ot">&lt;-</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">getSymbols</span>(<span class="st">"SPY"</span>,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">src=</span> <span class="st">"yahoo"</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">from =</span> <span class="st">"2012-12-31"</span>,</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">to =</span> <span class="st">"2017-12-31"</span>,</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">auto.assign =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">warnings =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span><span class="fu">Ad</span>(<span class="fu">get</span>(.))) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reduce</span>(merge) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="st">"SPY"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">to.monthly</span>(<span class="at">indexAt =</span> <span class="st">"lastof"</span>,</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">OHLC =</span> <span class="cn">FALSE</span> )</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>market_sharpe<span class="ot">&lt;-</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>  market_returns_xts <span class="sc">%&gt;%</span> </span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tk_tbl</span>(<span class="at">preserve_index =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">rename_index =</span> <span class="st">"date"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">returns=</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>           (<span class="fu">log</span>(SPY)<span class="sc">-</span><span class="fu">log</span>(<span class="fu">lag</span>(SPY)))) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ratio=</span> <span class="fu">mean</span>(returns<span class="sc">-</span>rfr)<span class="sc">/</span><span class="fu">sd</span>(returns <span class="sc">-</span>rfr))</span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>market_sharpe<span class="sc">$</span>ratio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.434933</code></pre>
+</div>
+</div>
+<p>Logo nosso portifólio apresentou performance pior que a do mercado para o período de tempo considerado.</p>
+<p>Isso demonstra o desafio de montar portifólios que sejam melhores que o mercado.</p>
+</section>
+<section id="analizando-o-índice-sharpe." class="level3">
+<h3 class="anchored" data-anchor-id="analizando-o-índice-sharpe.">Analizando o índice Sharpe.</h3>
+<p>Antes de visualizar o índice vamos verificar que proporção dos retornos de nosso portífólio excedem a taxa livre de risco.</p>
+<p>Para isso iremos adicionar duas colunas ao nosso conjunto de dados.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>sharpe_by_hand_with_returns_columns<span class="ot">&lt;-</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  portifolio_monthly_returns_dplyr_byhand <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ratio =</span> <span class="fu">mean</span>(returns<span class="sc">-</span>rfr)<span class="sc">/</span><span class="fu">sd</span>(returns<span class="sc">-</span>rfr)) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">returns_below_rfr =</span> </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">if_else</span>(returns <span class="sc">&lt;</span> rfr, returns, <span class="fu">as.numeric</span>(<span class="cn">NA</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">returns_above_rfr =</span> </span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>          <span class="fu">if_else</span>(returns <span class="sc">&gt;</span> rfr, returns, <span class="fu">as.numeric</span>(<span class="cn">NA</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.numeric, <span class="fu">funs</span>(<span class="fu">round</span>(.,<span class="dv">4</span>)))</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>sharpe_by_hand_with_returns_columns <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 5
+  date       returns ratio returns_below_rfr returns_above_rfr
+  &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;
+1 2013-01-31  0.0308 0.275           NA                 0.0308
+2 2013-02-28 -0.0009 0.275           -0.0009           NA     
+3 2013-03-31  0.0187 0.275           NA                 0.0187</code></pre>
+</div>
+</div>
+<p>Agora podemos criar um gráfico de dispersão.</p>
+<div class="cell" data-warnings="false">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>p4<span class="ot">&lt;-</span>sharpe_by_hand_with_returns_columns <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> date)) <span class="sc">+</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> returns_below_rfr), <span class="at">color =</span> <span class="st">"red"</span>)  <span class="sc">+</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> returns_above_rfr), <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#geom_vline( xintercept = as.numeric(as.Date("2016-11-30")), color = "blue") + </span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> rfr, <span class="at">color=</span><span class="st">"purple"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">" percent monthly returns"</span>)<span class="sc">+</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n=</span><span class="dv">10</span>) )<span class="sc">+</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a> <span class="fu">scale_x_date</span>(<span class="at">breaks =</span> <span class="fu">pretty_breaks</span>(<span class="at">n=</span><span class="dv">8</span>) )</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>(<span class="fu">print</span>(p4))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="finr34_files/figure-html/visualização-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="exercício" class="level3">
+<h3 class="anchored" data-anchor-id="exercício">Exercício</h3>
+<p>Comm base na aula passada crie uma visualização do indice de Sharpe em rolagem com uma janela de 24 meses.</p>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>John von Neumann e Oskar Morgenstein (1944) no apêndice do seu livro sobre teoria de jogos e comportamento econômico, desenvolvem uma rigorosa abordagem da teoria de decisões racionais sob incerteza. Embora ali a teoria da utilidade esperada fosse utilizada meramente como uma ferramenta de análise estratégica do comportamento, desde então esta teoria tem uma utilização bem mais ampla na modelagem das decisões humanas.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Para o estudante mais interessado sugerimos as seguintes leituras: Microeconomia Princípios Básicos para o estudo a utilidade esperada e do comportamento econômico. Para os conceitos básicos de finanças veja Ingersoll(1987). Para referência sobre apreçamento baseado em fator de desconto veja Cochrane (2005) e para discussões sobre relacionamentos ente finanças e macroeconomia sugerimos Lucas(1978).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Este estudo corresponde a disciplina de estatística. Você lembra como utilizer a tabela normal padronizada? Se não, convém fazer uma breve revisão.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Markowitz, Harry. Portfolio Selection: Efficient Diversification of Investments, John Wiley &amp; Sons, 1959.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
